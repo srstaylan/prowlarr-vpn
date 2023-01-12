@@ -10,16 +10,16 @@ All credits goes to Hotio :)!
 
 There are three Docker images to choose from.
 
-The tags are "[testing](https://github.com/vp-en/prowlarr-vpn/tree/testing)", "[nightly](https://github.com/vp-en/prowlarr-vpn/tree/nightly)", and "[PR](https://github.com/vp-en/prowlarr-vpn/tree/pr)" (pull requests).
+The tags are "[release](https://github.com/vp-en/prowlarr-vpn/tree/release)", "[testing](https://github.com/vp-en/prowlarr-vpn/tree/testing)", "[nightly](https://github.com/vp-en/prowlarr-vpn/tree/nightly)", and "[PR](https://github.com/vp-en/prowlarr-vpn/tree/pr)" (pull requests).
 
-The "testing" tag is for official "stable" releases, the "nightly" tag is for "unstable" releases (rebuilt with every commit to the Prowlarr develop branch), and the PR tag is built with every commit to the most recent pull request branch on the official Prowlarr repository.
+The "release" tag is for official "stable" releases, the "nightly" tag is for "unstable" releases (rebuilt with every commit to the Prowlarr develop branch), and the PR tag is built with every commit to the most recent pull request branch on the official Prowlarr repository.
 
 
 ## Using the images
 
-**Testing**
+**Release**
 
-`docker pull ghcr.io/vp-en/prowlarr-vpn:testing`
+`docker pull ghcr.io/vp-en/prowlarr-vpn:release`
 
 
 **Nightly**
