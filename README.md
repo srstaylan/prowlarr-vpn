@@ -44,7 +44,7 @@ version: "3.9"
 services:
   prowlarr-vpn:
     container_name: prowlarr-vpn
-    image: ghcr.io/vp-en/prowlarr-vpn:testing
+    image: ghcr.io/vp-en/prowlarr-vpn:release
     ports:
       - "9696:9696"
     environment:
