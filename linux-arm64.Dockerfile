@@ -3,9 +3,14 @@ ARG UPSTREAM_DIGEST_ARM64
 
 FROM ${UPSTREAM_IMAGE}@${UPSTREAM_DIGEST_ARM64}
 EXPOSE 9696
+ENV VPN_ENABLED="false" VPN_LAN_NETWORK="" VPN_CONF="wg0" VPN_ADDITIONAL_PORTS="" WEBUI_PORTS="9696/tcp,9696/udp" PRIVOXY_ENABLED="false" S6_SERVICES_GRACETIME=180000 VPN_IP_CHECK_DELAY=5 VPN_IP_CHECK_EXIT="true"
+
 VOLUME ["${CONFIG_DIR}"]
 
-RUN apk add --no-cache libintl sqlite-libs icu-libs
+RUN apk add --no-cache libintl sqlite-libs icu-libs && \
+    apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main privoxy iptables iproute2 openresolv wireguard-tools && \
+    apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community ipcalc && \
+    apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing wireguard-go
 
 ARG VERSION
 ARG SBRANCH
