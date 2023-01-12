@@ -18,7 +18,7 @@ ARG PACKAGE_VERSION=${VERSION}
 RUN mkdir "${APP_DIR}/bin" && \
     curl -fsSL "https://prowlarr.servarr.com/v1/update/${SBRANCH}/updatefile?version=${VERSION}&os=linuxmusl&runtime=netcore&arch=arm64" | tar xzf - -C "${APP_DIR}/bin" --strip-components=1 && \
     rm -rf "${APP_DIR}/bin/Prowlarr.Update" && \
-    echo -e "PackageVersion=${PACKAGE_VERSION}\nPackageAuthor=[hotio](https://github.com/hotio)\nUpdateMethod=Docker\nBranch=${SBRANCH}" > "${APP_DIR}/package_info" && \
+    echo -e "PackageVersion=${PACKAGE_VERSION}\nPackageAuthor=[vp-en](https://github.com/vp-en)\nUpdateMethod=Docker\nBranch=${SBRANCH}" > "${APP_DIR}/package_info" && \
     chmod -R u=rwX,go=rX "${APP_DIR}"
 
 COPY root/ /
